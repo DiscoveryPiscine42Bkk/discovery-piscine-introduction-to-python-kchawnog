@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
 import sys
 
-def main():
-    if len(sys.argv) != 2:
+args = sys.argv[1:]
+
+if len(sys.argv) == 0:
         print("none")
-        return
-
-text = sys.argv[1]
-count_z = text.count('z')
-
-if count_z == 0:
-    print("none")
 else:
-    print('z' * count_z)
-if __name__ == "main":
-    main()
+    combined = ''.join(args)
+    z_chars = [char for char in combined if char == 'z']
+    if len(z_chars) == 0:
+        print("none")
+    else:
+        print(''.join(z_chars))
