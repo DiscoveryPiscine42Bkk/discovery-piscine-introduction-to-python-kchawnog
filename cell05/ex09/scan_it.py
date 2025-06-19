@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 import sys
 
-def main():
-    if len(sys.argv)!=3:
-        print("none")
+argv = sys.argv[1:]
 
-keyword = sys.argv[1]
-text = sys.argv[2]
-
-count = text.count(keyword)
-if count == 0:
+if len(argv) != 2:
     print("none")
 else:
+    word = argv[0]
+    text = argv[1]
+    count = text.split().count(word)
     print(count)
-    
