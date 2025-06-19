@@ -46,7 +46,7 @@ def Select_option_3():
     if not tasks:
         print("ยังไม่มีงานในรายการ")
         return
- Select_option_2()
+def Select_option_2():
     try:
         task_number_to_delete = int(input("ลำดับของงานที่ต้องการลบ: ")) - 1
         if 0 <= task_number_to_delete < len(tasks):
@@ -70,4 +70,6 @@ def Select_option_4():
     print("\nสรุปจำนวนงานแต่ละประเภท:")
     for task_type, count in task_summary.items():
         print(f"{task_type}: {count} งาน")
- main()
+
+if __name__ =="__main__":
+    main()
