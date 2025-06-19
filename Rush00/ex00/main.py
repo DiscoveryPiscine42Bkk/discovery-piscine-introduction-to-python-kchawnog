@@ -46,7 +46,18 @@ def Select_option_3():
     if not tasks:
         print("ยังไม่มีงานในรายการ")
         return
-def Select_option_2():
+        
+    Select_option_2()
+    try:
+        task_number_to_delete = int(input("ลำดับของงานที่ต้องการลบ: ")) - 1
+        if 0 <= task_number_to_delete < len(tasks):
+            deleted_task = tasks.pop(task_number_to_delete)
+            print(f"ลบงาน: {deleted_task['name']} แล้ว - ")
+        else:
+            print("ไม่พบงานตามลำดับที่ระบุ")
+    except ValueError:
+        print("กรุณาป้อนตัวเลขสำหรับลำดับงาน")
+def Select_option_4():
     try:
         task_number_to_delete = int(input("ลำดับของงานที่ต้องการลบ: ")) - 1
         if 0 <= task_number_to_delete < len(tasks):
